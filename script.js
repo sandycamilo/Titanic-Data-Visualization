@@ -158,8 +158,8 @@ document.body.addEventListener('mouseover', (e) => {
       // block shows the div when mouse is over 
       passengerDetails.style.display = 'block'
       passengerDetails.style.position = 'absolute'
-      passengerDetails.style.left = `${e.pageX - 560}px`
-      passengerDetails.style.top = `${e.pageY - 300}px`
+      passengerDetails.style.left = `${e.pageX - 290}px`
+      passengerDetails.style.top = `${e.pageY - 200}px`
       passengerDetails.style.backgroundColor = 'white'
       passengerDetails.style.width = '200px'
       passengerDetails.style.height = '180px'
