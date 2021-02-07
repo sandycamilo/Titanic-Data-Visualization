@@ -31,3 +31,9 @@ Filtering data by:
 - fare
 - age
 
+
+## Check it out here:
+
+https://sandycamilo.github.io/FEW-2-5-Titanic-Visualization/ 
+
+
