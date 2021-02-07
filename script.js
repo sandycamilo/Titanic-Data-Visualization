@@ -10,7 +10,8 @@ const titanic = document.querySelector('#titanic')
 titanic.style.display = 'grid'
 // change the number of columns on the titanic to 34
 titanic.style.gridTemplateColumns = 'repeat(34, 15px)'
-titanic.style.gridGap = '2px'
+titanic.style.gridGap = '2.7px'
+titanic.style.backgroundColor = 'orange'
 
 // map over the data and make a new element for each passenger
 // use map to transform each passenger (p) into a div (createElement)
@@ -127,7 +128,7 @@ function renderPassengerStyles() {
   // set the backgroundColor of each passenger by their 
   // embarked value. There are three possible values: 
   // 'S', 'C', and 'Q'
-  const portColor = { S: 'tomato', C: 'purple', Q: 'orange', undefined: 'green'}
+  const portColor = { S: 'rgb(229, 255, 133)', C: 'lightblue', Q: 'yellow', undefined: 'rgba(249, 120, 7, 0.927)'}
   p.style.backgroundColor = portColor[data[i].fields.embarked]
 })
 }
@@ -157,12 +158,14 @@ document.body.addEventListener('mouseover', (e) => {
       // block shows the div when mouse is over 
       passengerDetails.style.display = 'block'
       passengerDetails.style.position = 'absolute'
-      passengerDetails.style.left = `${e.pageX + 3}px`
-      passengerDetails.style.top = `${e.pageY + 3}px`
+      passengerDetails.style.left = `${e.pageX - 560}px`
+      passengerDetails.style.top = `${e.pageY - 300}px`
       passengerDetails.style.backgroundColor = 'white'
-      passengerDetails.style.border = '1px solid'
+      passengerDetails.style.width = '200px'
+      passengerDetails.style.height = '180px'
+      passengerDetails.style.border = '1px solid orange'
       // space between edges and content
-      passengerDetails.style.padding = '0.5em'
+      passengerDetails.style.padding = '1em'
 
       passengerDetails.innerHTML = `
       <strong>${fields.name}</strong>

@@ -7,11 +7,11 @@ button {
   font-family: 'Inconsolata', monospace;
   font-size: 15px;
   color:black;
-  background-color: rgb(213, 203, 203);
+  background-color: rgb(230, 245, 238);
   border-radius: 16px;
-  padding: 1em;
+  padding: 1.5em;
   justify-content: space-between;
-  box-shadow: none;
+  border: none;
 }
 
 .chart {
@@ -20,14 +20,27 @@ button {
   height: 700px;
   padding: 2em;
   position: relative;
-  left:35%;
-  top: 100px;
+  left:30%;
+  top: -190px;
 }
 
 #buttons {
   border: none;
+  padding-bottom: 30px;
 }
 
 .button-title {
-  font-size: 40px;
+  font-size: 25px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.page-tile {
+  font-size: 75px;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  left: 44%;
+  top: -20px;
+  font-family: 'Lobster', cursive;
 }
