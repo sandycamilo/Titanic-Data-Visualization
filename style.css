@@ -1,6 +1,7 @@
 body {
   font-family: 'Inconsolata', monospace;
   overflow-x: hidden;
+  cursor: pointer;
 }
 
 button {
