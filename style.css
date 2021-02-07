@@ -1,1 +1,33 @@
+body {
+  font-family: 'Inconsolata', monospace;
+  overflow-x: hidden;
+}
 
+button {
+  font-family: 'Inconsolata', monospace;
+  font-size: 15px;
+  color:black;
+  background-color: rgb(213, 203, 203);
+  border-radius: 16px;
+  padding: 1em;
+  justify-content: space-between;
+  box-shadow: none;
+}
+
+.chart {
+  /* border: 1px black solid; */
+  width: 600px;
+  height: 700px;
+  padding: 2em;
+  position: relative;
+  left:35%;
+  top: 100px;
+}
+
+#buttons {
+  border: none;
+}
+
+.button-title {
+  font-size: 40px;
+}

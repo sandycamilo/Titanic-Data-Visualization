@@ -5,31 +5,33 @@
     <meta name="viewport" content="width=device-width">
     <title>Titanic View</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet"> 
   </head>
   <body>
-
-    <div id="titanic">
-      <!-- generate all passenger divs -->
+    <div class="chart">
+      <div id="titanic">
+        <!-- generate all passenger divs -->
+      </div>
+  
+      <p class="button-title">Sort data by:</p>
+      <div id="buttons">
+        <button class="sort-by-age">Age</button>
+        <button class="sort-by-fare">Fare</button>
+        <button class="sort-by-embarked">Embarked</button>
+        <button class="sort-by-class">Class</button>
+        <button class="sort-by-sex">Gender</button>
+        <button class="sort-by-survival">Survival</button>
+      </div>
+  
+      <div id="passenger-details">
+        <!-- display passenger information/details here -->
+      </div>
+  
+      <div id="titanic-embarked">
+        <!-- display bars -->
+      </div>
     </div>
-
-    <div id="buttons">
-      <button class="sort-by-age">Sort by Age</button>
-      <button class="sort-by-fare">Sort by Fare</button>
-      <button class="sort-by-embarked">Sort by Embarked</button>
-      <button class="sort-by-class">Sort by Class</button>
-      <button class="sort-by-sex">Sort by Gender</button>
-      <button class="sort-by-survival">Sort by Survival</button>
-    </div>
-
-    <div id="passenger-details">
-      <!-- display passenger information/details here -->
-    </div>
-
-    <div id="titanic-embarked">
-      <!-- display bars -->
-    </div>
-    
-
     <!-- import script tag as a module ~ allows us to use import(titanic data) inside script.js-->
     <script src="script.js" type="module"></script>
   </body>

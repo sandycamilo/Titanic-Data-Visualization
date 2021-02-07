@@ -1,70 +1,5 @@
 import data from './titanic-data.js'
 
-// visualization 1
-// port colors
-const portColor = { 
-  S: 'tomato', 
-  C: 'purple', 
-  Q: 'orange', 
-  undefined: 'green',
-  total: 'lightgray'
-}
-// variable to hold the bars - bars
-const titanicEmbarked = document.querySelector('#titanic-embarked')
-// count the passengers that embarked at each stop
-// reduce titanic data to an object with three keys - 1 with each stop
-// two parameters - a function(takes in accumulator and passenger) and an object 
-const embarkedCounts = data.reduce((acc, p) => {
-  // key does not exist in acc
-  if (acc[p.fields.embarked] === undefined) {
-    // create key and give it a value of 1 
-    acc[p.fields.embarked] = 1
-    // else if it not undefined
-  } else {
-    // add one
-    acc[p.fields.embarked] += 1
-  }
-  return acc
-}, {})
-
-// key for total
-embarkedCounts.total = data.length
-
-// object with keys and values to each key 
-// set of embarked keys 
-// embarkedCounts is an object - keys will will make an array of all the keys in that object
-// array of keys 
-const embarkedKeys = Object.keys(embarkedCounts)
-
-// the value at embarkedCount for each key is the number of passengers 
-embarkedKeys.forEach((e) => {
-  // create a div 
-  const el = document.createElement('div')
-  // append child and add el to the html contained element 'titanicEmbarked'
-  titanicEmbarked.appendChild(el)
-  // style div
-  el.style.width = '30px'
-  const count = embarkedCounts[e]
-  const percent = count / data.length * 100
-  el.style.height = `${percent}%`
-  // colors for each div using portColor where each is defined with a color
-  el.style.backgroundColor = portColor[e]
-  // add margin to el (bar element)
-  el.style.margin = '1px'
-})
-
-// display bars side by side 
-titanicEmbarked.style.display = 'flex'
-// align at the bottom 
-titanicEmbarked.style.alignItems = 'flex-end'
-// border 
-titanicEmbarked.style.border = '1px solid'
-// box containing the bars
-titanicEmbarked.style.width = '300px'
-titanicEmbarked.style.height = '300px'
-// scale bars to a percentage of the height of the box - so it doesn't shoot out 
-// you do this by using % instead of pixels in the el.style.height
-
 
 // visualization 2 - titanic sort 
 // get a reference to the #titanic div in index.html
@@ -233,8 +168,11 @@ document.body.addEventListener('mouseover', (e) => {
       <strong>${fields.name}</strong>
       <ul>
         <li>Age: ${fields.age}</li>
-        <li>Survived: ${fields.survived}</li>
+        <li>Survived: ${fields.sex}</li>
         <li>Class: ${fields.pclass}</li>
+        <li>Age: ${fields.survived}</li>
+        <li>Survived: ${fields.embarked}</li>
+        <li>Class: ${fields.fare}</li>
       </ul>`
   }
 } )
