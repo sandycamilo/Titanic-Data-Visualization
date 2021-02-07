@@ -93,8 +93,8 @@ passengers.forEach(p => {
   titanic.appendChild(p)
 })
 
-// WHO SURVIVED - BY PORT AND GENDER
-// sort data - survived?
+// who survived - data sorted by port and gender
+// sort data
 data.sort((a,b) => {
   // return a number less than 1 if a comes before b 
   // if it returns 0 then a and b stay in the same place 
@@ -127,6 +127,10 @@ data.sort((a,b) => {
 // let's loop over each passenger and set some styles 
 // style each of those divs
 passengers.forEach((p, i) => {
+  // when looping over passenger divs lets pass in a class name dynamically
+  p.classList.add('passenger')
+  // add an attribute for each passenger so that there is an id for every passenger - (index)
+  p.dataset.id = i
   // make the squares a little bigger 15px by 15px. 
   // you'll need to change both the gridTemplateColumn on the
   // titanic and the width and height of each passenger. 
@@ -148,9 +152,52 @@ passengers.forEach((p, i) => {
 })
 
 
+//  visualization 3 ~ passenger-details
 
+// make a variable equal to query selector - to get a reference to the the passenger details div in the html file
+const passengerDetails = document.querySelector('#passenger-details')
 
+// create an event listener that will register when the cursor enters one of the passenger divs 
+// instead of putting an event listener on every div, we place it on the whole body ~ event delegation
+// add it to the body tag - the body tag always exists unlike the divs that are being dynamically created, this way its less work!
+// the event we are listening for is 'mouseover'
+// event handler (function) --> function takes in an event object (e)
+document.body.addEventListener('mouseover', (e) => {
+  // the event object is created and passed passed to the function 
+  // target is the property (there are hundreds of properties to these event objects)- target is where the event occurs 
+  // .matches is a function that asks- does the event.target match the description passed in (.css selector)? 
+  if (e.target.matches('.passenger')) {
+      // console.log('mouse over div')
+    // check if e has id (index in titanic data) with .target 
+      const id = e.target.dataset.id
+      const fields = data[id].fields
+      // styling for passenger details box with information
+      // block shows the div when mouse is over 
+      passengerDetails.style.display = 'block'
+      passengerDetails.style.position = 'absolute'
+      passengerDetails.style.left = `${e.pageX + 3}px`
+      passengerDetails.style.top = `${e.pageY + 3}px`
+      passengerDetails.style.backgroundColor = 'white'
+      passengerDetails.style.border = '1px solid'
+      // space between edges and content
+      passengerDetails.style.padding = '0.5em'
 
+      passengerDetails.innerHTML = `
+      <strong>${fields.name}</strong>
+      <ul>
+        <li>Age: ${fields.age}</li>
+        <li>Survived: ${fields.survived}</li>
+        <li>Class: ${fields.pclass}</li>
+      </ul>`
+  }
+} )
+
+document.body.addEventListener('mouseout', (e) => {
+  if (e.target.matches('.passenger')) {
+    // hide passenger details div when mouse over div
+    passengerDetails.style.display = 'none'
+  }
+})
 
 
 
