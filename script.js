@@ -1,8 +1,6 @@
 import data from './titanic-data.js'
 
-
 const titanic = document.querySelector('#titanic')
-
 
 titanic.style.display = 'grid'
 titanic.style.gridTemplateColumns = 'repeat(34, 20px)'
@@ -13,11 +11,9 @@ const passengers = data.map(p => {
   return document.createElement('div')
 })
 
-
 passengers.forEach(p => {
   titanic.appendChild(p)
 })
-
 
 function sortSurvival() {
   data.sort((a,b) => {
@@ -93,7 +89,6 @@ function renderPassengerStyles() {
 })
 }
 renderPassengerStyles()
-
 
 const passengerDetails = document.querySelector('#passenger-details')
 
