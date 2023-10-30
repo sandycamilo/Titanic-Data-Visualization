@@ -7,41 +7,31 @@ body {
 button {
   font-family: 'Inconsolata', monospace;
   font-size: 15px;
-  color:black;
   background-color: rgb(230, 245, 238);
   border-radius: 16px;
   padding: 1.5em;
-  justify-content: space-between;
   border: none;
-}
-
-.chart {
-  /* border: 1px black solid; */
-  width: 600px;
-  height: 700px;
-  padding: 2em;
-  position: relative;
-  left:30%;
-  top: -190px;
 }
 
 #buttons {
-  border: none;
-  padding-bottom: 30px;
+  position: absolute;
+  top: 10%;
+  left: 45%;
+}
+
+.chart {
+  width: 100px;
+  height: 100%;
+  padding: 2em;
+  position: absolute;
+  left: 10%;
+  top: 20%;
 }
 
 .button-title {
-  font-size: 25px;
   padding-top: 40px;
   padding-bottom: 20px;
-}
-
-.page-tile {
-  font-size: 75px;
-  position: relative;
-  width: 300px;
-  height: 200px;
-  left: 44%;
-  top: -20px;
-  font-family: 'Lobster', cursive;
+  position: absolute;
+  left: 16%;
+  top: 6%;
 }

@@ -3,33 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titanic</title>
+    <title>Titanic Data Visualization</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <!-- button font  -->
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet"> 
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <!-- title font  -->
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   </head>
   <body>
-    <p class="page-tile">Titanic</p>
-    
+    <p class="button-title">sort data by:</p>
+    <div id="buttons">
+      <button class="sort-by-age">age</button>
+      <button class="sort-by-fare">fare</button>
+      <button class="sort-by-embarked">embarked</button>
+      <button class="sort-by-class">class</button>
+      <button class="sort-by-sex">gender</button>
+      <button class="sort-by-survival">survival</button>
+    </div>
     <div class="chart">
       <div id="titanic">
         <!-- generate all passenger divs -->
-      </div>
-  
-      <p class="button-title">Sort data by:</p>
-      <div id="buttons">
-        <button class="sort-by-age">Age</button>
-        <button class="sort-by-fare">Fare</button>
-        <button class="sort-by-embarked">Embarked</button>
-        <button class="sort-by-class">Class</button>
-        <button class="sort-by-sex">Gender</button>
-        <button class="sort-by-survival">Survival</button>
       </div>
   
       <div id="passenger-details">
