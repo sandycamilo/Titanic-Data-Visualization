@@ -4,7 +4,7 @@ const titanic = document.querySelector('#titanic')
 
 titanic.style.display = 'grid'
 titanic.style.gridTemplateColumns = 'repeat(34, 20px)'
-titanic.style.gridGap = '10px'
+titanic.style.gridGap = '6px'
 titanic.style.backgroundColor = 'lightbrown'
 
 const passengers = data.map(p => {
