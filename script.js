@@ -6,19 +6,23 @@ titanic.style.display = 'grid'
 titanic.style.gridTemplateColumns = 'repeat(12, 1fr)'
 titanic.style.gridGap = '6px'
 titanic.style.width = '80%'; 
+titanic.style.height = '80%'; 
 
 function setGridColumns() {
   const screenWidth = window.innerWidth;
 
   if (screenWidth < 480) {
     titanic.style.gridTemplateColumns = 'repeat(12, 1fr)';
-    titanic.style.width = '90%';
+    titanic.style.width = '70%';
+    titanic.style.height = '70%'; 
   } else if (screenWidth < 768) {
     titanic.style.gridTemplateColumns = 'repeat(24, 1fr)';
-    titanic.style.width = '80%';
+    titanic.style.width = '60%';
+    titanic.style.height = '60%'; 
   } else {
     titanic.style.gridTemplateColumns = 'repeat(48, 18px)';
-    titanic.style.width = '60%';
+    titanic.style.width = '50%';
+    titanic.style.height = '50%'; 
   }
 }
 
