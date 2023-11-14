@@ -5,8 +5,8 @@ const titanic = document.querySelector('#titanic')
 titanic.style.display = 'grid'
 titanic.style.gridTemplateColumns = 'repeat(12, 1fr)'
 titanic.style.gridGap = '6px'
-titanic.style.width = '80%'; 
-titanic.style.height = '80%'; 
+titanic.style.width = '70%'; 
+titanic.style.height = '70%'; 
 
 function setGridColumns() {
   const screenWidth = window.innerWidth;
@@ -115,19 +115,36 @@ renderPassengerStyles()
 
 const passengerDetails = document.querySelector('#passenger-details')
 
+function adjustPassengerDetails() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth < 480) {
+    passengerDetails.style.width = '80%';
+  } else if (screenWidth < 768) {
+    passengerDetails.style.width = '60%';
+  } else {
+    passengerDetails.style.width = '200px'; 
+  }
+}
+
+adjustPassengerDetails();
+
+window.addEventListener('resize', adjustPassengerDetails);
+
 document.body.addEventListener('mouseover', (e) => {
   if (e.target.matches('.passenger')) {
-      const id = e.target.dataset.id
-      const fields = data[id].fields
-      passengerDetails.style.display = 'block'
-      passengerDetails.style.position = 'absolute'
-      passengerDetails.style.left = `${e.pageX - 290}px`
-      passengerDetails.style.top = `${e.pageY - 200}px`
-      passengerDetails.style.backgroundColor = 'yellow'
-      passengerDetails.style.width = '200px'
-      passengerDetails.style.height = '180px'
-      passengerDetails.style.border = '1px solid red'
-      passengerDetails.style.padding = '1em'
+      const id = e.target.dataset.id;
+      const fields = data[id].fields;
+
+      adjustPassengerDetails();
+
+      passengerDetails.style.display = 'block';
+      passengerDetails.style.position = 'absolute';
+      passengerDetails.style.top = `${e.clientY - 200}px`; 
+      passengerDetails.style.left = `${e.clientX + 20}px`;
+      passengerDetails.style.backgroundColor = 'yellow';
+      passengerDetails.style.border = '1px solid red';
+      passengerDetails.style.padding = '1em';
 
       passengerDetails.innerHTML = `
       <strong>${fields.name}</strong>
@@ -138,7 +155,7 @@ document.body.addEventListener('mouseover', (e) => {
         <li>Survived: ${fields.survived}</li>
         <li>Embarked: ${fields.embarked}</li>
         <li>Fare: ${fields.fare}</li>
-      </ul>`
+      </ul>`;
   }
 } )
 
