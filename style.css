@@ -2,6 +2,7 @@ body {
   font-family: 'Inconsolata', monospace;
   overflow-x: hidden;
   cursor: pointer;
+  font-size: 16px;
 }
 
 button {
@@ -10,69 +11,76 @@ button {
   border: none;
   background-color: rgb(230, 245, 238);
   border-radius: 2em;
-  position: relative;
-  left: 1em;
-  top: 1em;
+  margin: 0.5em;
   padding: 1em;
 }
 
 #buttons {
-  position: absolute;
-  top: 10%;
-  left: 45%;
+  text-align: center;
+  margin-top: 1em;
 }
 
 .chart {
   padding: 2em;
-  position: absolute;
-  left: 10%;
-  top: 20%;
+  margin: 0 auto; 
+  max-width: 800px; 
+  position: relative;
+  left: 20%;
+  transform: translateX(-50%); 
 }
 
 .button-title {
-  padding-top: 2em;
-  position: absolute;
-  left: 16%;
-  top: 6%;
+  margin-top: 2em;
+  text-align: center;
 }
 
 h1 {
-  position: absolute;
-  left: 15%;
-  top: 1em;
   font-size: 1.5em;
+  text-align: center;
+  padding: 1em;
 }
 
-/* Responsive styles */
 @media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
   h1 {
     font-size: 1.2em;
   }
 
   .chart {
-    left: 5%;
+    padding: 1em;
+    max-width: none;
   }
 
   .button-title {
-    left: 10%;
+    margin-top: 1em;
   }
 
   #buttons {
-    left: 30%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
 
 @media only screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
   h1 {
     font-size: 1em;
   }
 
   .chart,
   .button-title {
-    left: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
   }
 
   #buttons {
-    left: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }

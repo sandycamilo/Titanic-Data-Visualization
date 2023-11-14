@@ -3,7 +3,7 @@ import data from './titanic-data.js'
 const titanic = document.querySelector('#titanic')
 
 titanic.style.display = 'grid'
-titanic.style.gridTemplateColumns = 'repeat(34, 20px)'
+titanic.style.gridTemplateColumns = 'repeat(48, 18px)'
 titanic.style.gridGap = '6px'
 titanic.style.backgroundColor = 'lightbrown'
 
@@ -80,8 +80,8 @@ function renderPassengerStyles() {
   passengers.forEach((p, i) => {
   p.classList.add('passenger')
   p.dataset.id = i
-  p.style.width = '50px'
-  p.style.height = '40px'
+  p.style.width = '40px'
+  p.style.height = '28px'
   p.style.borderRadius = data[i].fields.sex === 'female' ? '50%' : '0'
   p.style.opacity = data[i].fields.survived === 'Yes' ? '1.0' : '.5'
   const portColor = { S: 'rgb(229, 255, 133)', C: 'lightblue', Q: 'red', undefined: 'green'}
