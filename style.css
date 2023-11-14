@@ -51,7 +51,9 @@ h1 {
 
   .chart {
     padding: 1em;
-    max-width: none;
+    max-width: 100%;
+    left: 0;
+    transform: none;
   }
 
   .button-title {
@@ -73,7 +75,13 @@ h1 {
     font-size: 1em;
   }
 
-  .chart,
+  .chart {
+    padding: 1em;
+    max-width: 100%;
+    left: 0;
+    transform: none;
+  }
+
   .button-title {
     margin-left: 2%;
     margin-right: 2%;
