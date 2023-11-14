@@ -3,9 +3,28 @@ import data from './titanic-data.js'
 const titanic = document.querySelector('#titanic')
 
 titanic.style.display = 'grid'
-titanic.style.gridTemplateColumns = 'repeat(48, 18px)'
+titanic.style.gridTemplateColumns = 'repeat(12, 1fr)'
 titanic.style.gridGap = '6px'
-titanic.style.backgroundColor = 'lightbrown'
+titanic.style.width = '80%'; 
+
+function setGridColumns() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth < 480) {
+    titanic.style.gridTemplateColumns = 'repeat(12, 1fr)';
+    titanic.style.width = '90%';
+  } else if (screenWidth < 768) {
+    titanic.style.gridTemplateColumns = 'repeat(24, 1fr)';
+    titanic.style.width = '80%';
+  } else {
+    titanic.style.gridTemplateColumns = 'repeat(48, 18px)';
+    titanic.style.width = '60%';
+  }
+}
+
+setGridColumns();
+
+window.addEventListener('resize', setGridColumns);
 
 const passengers = data.map(p => {
   return document.createElement('div')

@@ -25,7 +25,7 @@ button {
   margin: 0 auto; 
   max-width: 800px; 
   position: relative;
-  left: 20%;
+  left: 16%;
   transform: translateX(-50%); 
 }
 
