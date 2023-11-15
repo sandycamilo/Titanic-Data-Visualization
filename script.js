@@ -12,17 +12,11 @@ function setGridColumns() {
   const screenWidth = window.innerWidth;
 
   if (screenWidth < 480) {
-    titanic.style.gridTemplateColumns = 'repeat(12, 1fr)';
-    titanic.style.width = '70%';
-    titanic.style.height = '70%'; 
+    titanic.style.gridTemplateColumns = 'repeat(auto-fill, minmax(40px, 1fr))';
   } else if (screenWidth < 768) {
-    titanic.style.gridTemplateColumns = 'repeat(24, 1fr)';
-    titanic.style.width = '60%';
-    titanic.style.height = '60%'; 
+    titanic.style.gridTemplateColumns = 'repeat(auto-fill, minmax(40px, 1fr))';
   } else {
-    titanic.style.gridTemplateColumns = 'repeat(48, 18px)';
-    titanic.style.width = '50%';
-    titanic.style.height = '50%'; 
+    titanic.style.gridTemplateColumns = 'repeat(auto-fill, minmax(18px, 1fr))';
   }
 }
 
@@ -119,11 +113,15 @@ function adjustPassengerDetails() {
   const screenWidth = window.innerWidth;
 
   if (screenWidth < 480) {
-    passengerDetails.style.width = '80%';
+    passengerDetails.style.width = '60%';
+    passengerDetails.style.height = 'auto'; 
   } else if (screenWidth < 768) {
     passengerDetails.style.width = '60%';
+    passengerDetails.style.height = 'auto'; 
   } else {
-    passengerDetails.style.width = '200px'; 
+    passengerDetails.style.width = '200px';
+    passengerDetails.style.maxWidth = '400px';
+    passengerDetails.style.height = 'auto'; 
   }
 }
 
@@ -144,7 +142,7 @@ document.body.addEventListener('mouseover', (e) => {
       passengerDetails.style.left = `${e.clientX + 20}px`;
       passengerDetails.style.backgroundColor = 'yellow';
       passengerDetails.style.border = '1px solid red';
-      passengerDetails.style.padding = '1em';
+      passengerDetails.style.padding = '.5em';
 
       passengerDetails.innerHTML = `
       <strong>${fields.name}</strong>

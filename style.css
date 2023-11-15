@@ -23,10 +23,15 @@ button {
 .chart {
   padding: 2em;
   margin: 0 auto; 
-  max-width: 800px; 
+  max-width: 100%; 
+  align-items: center;
+  box-sizing: border-box;
   position: relative;
-  left: 16%;
-  transform: translateX(-50%); 
+  left: 12%;
+}
+
+#titanic {
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
 }
 
 .button-title {
@@ -51,9 +56,10 @@ h1 {
 
   .chart {
     padding: 1em;
-    max-width: 100%;
-    left: 0;
-    transform: none;
+  }
+
+  #titanic {
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
   }
 
   .button-title {
@@ -77,9 +83,11 @@ h1 {
 
   .chart {
     padding: 1em;
-    max-width: 100%;
-    left: 0;
-    transform: none;
+    /* max-width: 100%; */
+  }
+
+  #titanic {
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
   }
 
   .button-title {
