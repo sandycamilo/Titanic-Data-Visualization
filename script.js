@@ -3,18 +3,18 @@ import data from './titanic-data.js'
 const titanic = document.querySelector('#titanic')
 
 titanic.style.display = 'grid'
-titanic.style.gridTemplateColumns = 'repeat(12, 1fr)'
-titanic.style.gridGap = '20px'
-titanic.style.width = '70%'; 
-titanic.style.height = '70%'; 
+// titanic.style.gridTemplateColumns = 'repeat(12, 1fr)'
+titanic.style.gridGap = '10px'
+titanic.style.width = '100%'; 
+titanic.style.height = '100%'; 
 
 function setGridColumns() {
   const screenWidth = window.innerWidth;
 
   if (screenWidth < 480) {
-    titanic.style.gridTemplateColumns = 'repeat(auto-fill, minmax(40px, 1fr))';
+    titanic.style.gridTemplateColumns = 'repeat(auto-fill, minmax(30px, 1fr))';
   } else if (screenWidth < 768) {
-    titanic.style.gridTemplateColumns = 'repeat(auto-fill, minmax(40px, 1fr))';
+    titanic.style.gridTemplateColumns = 'repeat(auto-fill, minmax(20px, 1fr))';
   } else {
     titanic.style.gridTemplateColumns = 'repeat(auto-fill, minmax(18px, 1fr))';
   }
@@ -138,7 +138,7 @@ document.body.addEventListener('mouseover', (e) => {
 
       passengerDetails.style.display = 'block';
       passengerDetails.style.position = 'absolute';
-      passengerDetails.style.top = `${e.clientY - 200}px`; 
+      passengerDetails.style.top = `${e.clientY - 20}px`; 
       passengerDetails.style.left = `${e.clientX + 20}px`;
       passengerDetails.style.backgroundColor = 'yellow';
       passengerDetails.style.border = '1px solid red';
