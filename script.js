@@ -4,7 +4,7 @@ const titanic = document.querySelector('#titanic')
 
 titanic.style.display = 'grid'
 titanic.style.gridTemplateColumns = 'repeat(12, 1fr)'
-titanic.style.gridGap = '6px'
+titanic.style.gridGap = '20px'
 titanic.style.width = '70%'; 
 titanic.style.height = '70%'; 
 
@@ -97,7 +97,7 @@ function renderPassengerStyles() {
   passengers.forEach((p, i) => {
   p.classList.add('passenger')
   p.dataset.id = i
-  p.style.width = '40px'
+  p.style.width = '30px'
   p.style.height = '28px'
   p.style.borderRadius = data[i].fields.sex === 'female' ? '50%' : '0'
   p.style.opacity = data[i].fields.survived === 'Yes' ? '1.0' : '.5'
